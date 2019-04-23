@@ -1,1 +1,1 @@
-# docker-chrome-php
+# Chromium + PHP for Docker
