@@ -17,9 +17,16 @@ RUN set -xe && \
 
 # Add Chromium as a user
 RUN mkdir -p /usr/src/app \
+    && touch /var/log/chromedriver.log \
     && adduser -D chromium \
-    && chown -R chromium:chromium /usr/src/app
+    && chown -R chromium:chromium /usr/src/app /var/log/chromedriver.log
 
 # Run Chromium as non-privileged
 USER chromium
 WORKDIR /usr/src/app
+
+COPY ./docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+
+EXPOSE 9515
+
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
