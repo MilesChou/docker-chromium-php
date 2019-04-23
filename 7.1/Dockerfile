@@ -3,7 +3,7 @@
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
 #
-FROM php:alpine
+FROM php:7.1-alpine
 
 LABEL repository="https://github.com/MilesChou/docker-chromium-php"
 LABEL homepage="https://github.com/MilesChou/docker-chromium-php"
